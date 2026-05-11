@@ -364,7 +364,7 @@ def style_screener(df: pd.DataFrame) -> pd.io.formats.style.Styler:
     styler = (
         df.style
           .format(existing_fmt, na_rep="—")
-          .applymap(color_sharpe, subset=["Sharpe"])
+          .map(color_sharpe, subset=["Sharpe"])
           .set_properties(**{"background-color": NAVY_CARD, "color": TEXT,
                              "border": f"1px solid #1E3A5F"})
           .set_table_styles([
